@@ -1,0 +1,30 @@
+<div data-bind="with: menuSection">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" data-bind="click: headerClick"><h3 data-bind="text:$parent.viewModel.docName"></h3></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="margin-top:13px;">
+                        <div data-bind='component: {name:"ui-button", params: {viewModel: closeNav}}'></div>
+                    </li>
+                    <li style="margin-top:13px;margin-left: 10px;">
+                        <div data-bind='component: {name:"ui-button", params: {viewModel: closeTab}}'></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div data-bind='component: {name:"ui-jqxtree", params: {viewModel: jqxtree1}}'
+         class="col-xs-12 col-sm-3 col-md-3" style="padding-left: 5px;padding-right: 5px;"></div>
+    <div class="col-xs-12 col-sm-9 col-md-9" style="padding-left: 5px;padding-right: 5px;"
+         data-bind="css:tab1.panelCss">
+        <div class='panel panel-primary panel-sm'>
+            <!--<div class='panel-heading'></div>-->
+            <div class='panel-body'>
+                <div data-bind='component: {name:"ui-tab", params: {viewModel: tab1}}'></div>
+            </div>
+        </div>
+    </div>
+</div>

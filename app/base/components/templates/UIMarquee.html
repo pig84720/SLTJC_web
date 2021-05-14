@@ -1,0 +1,16 @@
+<ul data-bind="attr:{id:viewModel.id}, foreach: viewModel.kaUrlItems, style: { width: viewModel.width }, css:viewModel.cls " class="marquee">
+    <li>
+        <div data-bind='component: {name:"ui-link-item-base",
+                                    params: { kNo: itemNo,
+                                              kTitle: title,
+                                              kUrl: url,
+                                              kTarget: target,
+                                              kContent: content,
+                                              kType: type,
+                                              kSize: $parent.viewModel.modalSize,
+                                              kHeight: $parent.viewModel.modalHeight,
+                                              click: $parent.viewModel.click
+                                            }
+                                    }' ></div>
+    </li>
+</ul>

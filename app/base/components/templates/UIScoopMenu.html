@@ -1,0 +1,85 @@
+<div class="scoop" data-bind="attr:{id:viewModel.id};">
+    <div class="scoop-overlay-box"></div>
+    <div class="scoop-container">
+        <header class="scoop-header">
+            <div class="scoop-wrapper">
+                <div class="scoop-left-header">
+                    <div class="scoop-logo">
+                        <a href="#">
+                            <span class="logo-icon">
+                                <!-- ko if: viewModel.logoSrc() != '' -->
+								<i data-bind="style:{content:'url('+viewModel.logoSrc()+')'}"></i>
+                                <!-- /ko -->
+                                <!-- ko if: viewModel.logoSrc() == '' -->
+								<i class="ion-stats-bars"></i>
+                                <!-- /ko -->
+                            </span>
+                            <span class="logo-text">
+                                <span data-bind="html:viewModel.sysName">System Name</span>
+                                <span class="hide-in-smallsize"></span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="scoop-right-header">
+                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="icon-menu"></i></a></div>
+                    <div class="scoop-rl-header">
+                        <ul>
+                            <li class="icons">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <span class="scoop-badge badge-success">2</span>
+                                </a>
+                            </li>
+                            <li class="icons">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-bell" aria-hidden="true"></i>
+                                    <span class="scoop-badge badge-danger">8</span>
+                                </a>
+                            </li>
+                            <li class="icons">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                                    <span class="scoop-badge badge-warning">8</span>
+                                </a>
+                            </li>
+                            <li class="icons hide-small-device">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-rss" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scoop-rr-header">
+                        <ul>
+                            <li class="icons">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="icons">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="scoop-main-container">
+            <div class="scoop-wrapper">
+                <nav class="scoop-navbar">
+                    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                    <div class="scoop-inner-navbar">
+                        <!--place menu structure-->
+                    </div>
+                </nav>
+                <div class="scoop-content">
+                    <div class="scoop-inner-content">
+                        <div data-bind='component: {name:"ui-rubytabs", params: {viewModel: menuSection.rubyTabs}}'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

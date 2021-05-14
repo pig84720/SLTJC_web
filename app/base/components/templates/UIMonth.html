@@ -1,0 +1,67 @@
+<label class="columnTitle" data-bind="style: { width: viewModel.labelWidth, display: viewModel.label() == '' || viewModel.isVisible() == false ? 'none' : '' }">
+    <span data-bind="text:viewModel.label"></span>：
+</label>
+<div class="columnContentContainer" data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none' }">
+    <div class="columnContentUnit">
+        <!-- ko if: viewModel.placeholder == null -->
+        <input type="text"
+               data-bind="value: viewModel,
+                  enable: viewModel.isEnable,
+                  hasFocus: viewModel.hasFocus,
+                  event:{
+                     keypress: viewModelKeypress,
+                     focus: viewModelFocus,
+                     blur: viewModelBlur,
+                     click: viewModel.event.click,
+                     change: viewModel.event.change
+                  },
+                  style: { width: viewModel.width },
+                  attr: { maxlength: viewModel.maxlength, placeholder:viewModel.placeholder },
+                  css: viewModel.cls "
+               style="display: inline-block;"
+                />
+        <!-- /ko -->
+        <!-- ko if: viewModel.placeholder != null && viewModel.cls == null  -->
+        <input type="text"
+               data-bind="value: viewModel,
+                  enable: viewModel.isEnable,
+                  hasFocus: viewModel.hasFocus,
+                  event:{
+                     keypress: viewModelKeypress,
+                     focus: viewModelFocus,
+                     blur: viewModelBlur,
+                     click: viewModel.event.click,
+                     change: viewModel.event.change
+                  },
+                  style: { width: viewModel.width },
+                  attr: { maxlength: viewModel.maxlength, placeholder:viewModel.placeholder },
+                  css: (viewModel.placeholder() != '' ? 'form-control' : '' ) "
+               style="display: inline-block;"
+        />
+        <!-- /ko -->
+        <!-- ko if: viewModel.placeholder != null && viewModel.cls != null  -->
+        <input type="text"
+               data-bind="value: viewModel,
+                  enable: viewModel.isEnable,
+                  hasFocus: viewModel.hasFocus,
+                  event:{
+                     keypress: viewModelKeypress,
+                     focus: viewModelFocus,
+                     blur: viewModelBlur,
+                     click: viewModel.event.click,
+                     change: viewModel.event.change
+                  },
+                  style: { width: viewModel.width },
+                  attr: { maxlength: viewModel.maxlength, placeholder:viewModel.placeholder },
+                  css: (viewModel.placeholder() != '' ? 'form-control ' : '' ) + viewModel.cls() "
+               style="display: inline-block;"
+        />
+        <!-- /ko -->
+        <span data-bind="html: viewModel.unitLabel"></span>
+    </div>
+    <div class="columnContentUnit bubble" style="float: right;"
+         data-bind="style:{ display: viewModel.isModified != null && viewModel.isModified() && viewModel.error() ? '' : 'none', left: viewModel.labelWidth }"
+         onclick="$(this).css('display','none');">
+        <span class="validationMessage" data-bind="validationMessage: viewModel"></span>
+    </div>
+</div>

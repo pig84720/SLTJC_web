@@ -1,0 +1,45 @@
+<div data-bind='component: {name:"ui-link-item", params: {viewModel: ePaperSection.kTrigger, parentViewmodel:viewModel }}'></div>
+
+<div class="modal fade " tabindex="-1" role="dialog"
+     data-bind="attr : { id : viewModel.id() + 'Popup', 'aria-labelledby' : viewModel.id() + 'Label' }">
+    <div class="modal-dialog " role="document" data-bind="css: viewModel.modalSize">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title" data-bind="text: viewModel.label , attr : { id : viewModel.id() + 'Label'}"
+                    style="color: black;"></h5>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="epaperTitle" data-bind="text: viewModel.registTitle">訂閱電子報</div>
+                    <div class="epaperForm">
+                        <div class="txt" data-bind="text: viewModel.registMessage">
+                            每月發送的電子報與不定期發送的活動快訊 EDM，提供您更即時的資訊。
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px">
+                    <div data-bind='component: {name:"ui-input-button-group", params: {viewModel: ePaperSection.kRegistMail, parentViewmodel: viewModel }}'
+                         class="col-xs-12 col-sm-12 col-md-12 "></div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="epaperTitle" data-bind="text: viewModel.removeTitle">退訂電子報</div>
+                    <div class="epaperForm">
+                        <div class="txt" data-bind="text: viewModel.removeMessage">
+                            一但選擇退訂電子報，您很可能會錯過相關活動與最新資訊。
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px">
+                    <div data-bind='component: {name:"ui-input-button-group", params: {viewModel: ePaperSection.kRemoveMail, parentViewmodel: viewModel }}'
+                         class="col-xs-12 col-sm-12 col-md-12 "></div>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: none;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-bind='component: {name:"ui-alert", params: {viewModel: ePaperSection.kAlert}}'></div>

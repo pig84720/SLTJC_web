@@ -1,0 +1,14 @@
+<div class="input-group  input-group-sm" data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none', width: viewModel.width }">
+    <input type="text" class="form-control" data-bind="value: viewModel, attr:{ placeholder:viewModel.placeholder } "/>
+    <span class="input-group-btn">
+    <button type="button" class="btn" data-bind="
+            click: viewModel.event.click,
+            enable: viewModel.isEnable,
+            hasFocus: viewModel.hasFocus,
+            text: viewModel.label,
+            css: viewModel.ui,
+            style: { width: viewModel.buttonWidth }"
+            style="float: left;">
+    </button>
+    </span>
+</div>

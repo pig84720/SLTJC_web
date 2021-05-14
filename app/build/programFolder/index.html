@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script data-main="../app/pages/programFolder/index" src="../app/require.js"></script>
+</head>
+<body>
+<div class="programPannel" data-bind="css: id">
+    <!--<div data-bind="component: {name:'titleBar',params:{titleInfo: titleInfo,id: id}}"></div>-->
+    <titlebar params="titleInfo: titleInfo,id: id"></titlebar>
+    <pagelayout params="id: id"></pagelayout>
+    <div class="layoutDocking" style="display:none;">
+        <div class="layoutPanel">
+            <div class="querySection" style="height: 200px;width:100%;">
+                <div>
+                    查詢區
+                </div>
+                <div>
+                    <errormessage params="errors: querySection.errors"></errormessage>
+                    <fieldset>
+                        <div class="row">
+                            <label>姓名：</label>
+                            <sstextbox params="textbox: querySection.kName"></sstextbox>
+                        </div>
+                        <div class="row">
+                            <label>電話號碼：</label>
+                            <sstextbox params="textbox: querySection.kPhoneNo"></sstextbox>
+                        </div>
+                        <div class="row">
+                            <ssbutton params="button: querySection.queryData, buttonName:'查詢', buttonType:'actionButton'"></ssbutton>
+                            &nbsp;
+                            <ssbutton params="button: querySection.clearData, buttonName:'清除', buttonType:'confirmButton'"></ssbutton>
+                            &nbsp;
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="listSection" style="height: 180px;width:100%;">
+                <div>
+                    清單區
+                </div>
+                <div>
+                    A database management system (DBMS) is a software package with computer programs
+                    that control the creation, maintenance, and the use of a database. It allows organizations
+                    to conveniently develop databases...
+                </div>
+            </div>
+
+            <div class="editSection" style="height: 180px;width:100%;">
+                <div>
+                    維護區
+                </div>
+                <div>
+                    Some aspects attributed to the first RISC-labeled designs around 1975 include the
+                    observations that the memory-restricted compilers of the time were often unable
+                    to take advantage...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

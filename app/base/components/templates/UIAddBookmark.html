@@ -1,0 +1,27 @@
+<!-- ko if: viewModel.triggerType()=='link' -->
+<a data-bind="text:viewModel.label,
+              attr:{ href:'#', target:'' },
+              css: viewModel.cls,
+              style: { width: viewModel.width,
+                       display: viewModel.isVisible() == true ? '' : 'none' },
+              click: bookmarkSection.addBookMark " style="text-align: center;"></a>
+<!-- /ko -->
+<!-- ko if: viewModel.triggerType()=='text' -->
+<span data-bind="text:viewModel.label,
+                 click:bookmarkSection.addBookMark,
+                 css: viewModel.cls,
+                 style: { width: viewModel.width,
+                          display: viewModel.isVisible() == true ? '' : 'none' }"
+      style="cursor:pointer;text-align: center;"></span>
+<!-- /ko -->
+<!-- ko if: viewModel.triggerType()=='button' -->
+<button type="button" class="btn" data-bind="
+            click: bookmarkSection.addBookMark,
+            enable: viewModel.isEnable,
+            text: viewModel.label,
+            css: viewModel.ui,
+            style: { width: viewModel.width, display: viewModel.isVisible() == true ? '' : 'none' }"
+>
+</button>
+<!-- /ko -->
+<div data-bind='component: {name:"ui-alert", params: {viewModel: bookmarkSection.kAlert}}'></div>

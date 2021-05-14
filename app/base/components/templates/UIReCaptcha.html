@@ -1,0 +1,6 @@
+<label class="columnTitle" data-bind="style: { width: viewModel.labelWidth, display: viewModel.label() == '' || viewModel.isVisible() == false ? 'none' : '' }">
+    <span data-bind="text:viewModel.label"></span>：
+</label>
+<div class="columnContentContainer" data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none' },css: viewModel.id()+'Container'">
+	<!--<div data-bind="attr:{id: viewModel.id}" style="margin-bottom: 10px;"></div>-->
+</div>

@@ -1,0 +1,25 @@
+<div class="thumbnail col-xs-12 col-sm-12 col-md-12 col-lg-12" style="width:100%;margin-bottom:10px;">
+    <div class="caption titleCaption" data-bind="html:titleCaption,style:{ display: titleCaption == '' ? 'none' : '' }">
+    </div>
+    <!-- ko if: url != '' -->
+    <a href="#" data-bind="attr: { href: url }, click: callback" target="_blank" >
+        <div class="thumbnailImgDiv">
+            <div class="thumbnailImgDivCard" data-bind="html:overlayContent" style="display:none;">
+            </div>
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" data-bind="attr: { src: src, alt: alt }, event:{ error: error } ,css: (vertical == true ? '' : 'col-xs-6 col-sm-6 col-md-6 col-lg-6')" style="padding:0px 5px;width:100%;"/>
+
+        </div>
+        <div class="caption contentCaption" data-bind="html:contentCaption, style:{ display: contentCaption == '' ? 'none' : '' }, css: (vertical == true ? '' : 'col-xs-6 col-sm-6 col-md-6 col-lg-6')" style="padding:10px 5px;">
+    </div>
+    </a>
+    <!-- /ko -->
+    <!-- ko if: url == '' -->
+        <div class="thumbnailImgDiv">
+            <div class="thumbnailImgDivCard" data-bind="html:overlayContent" style="display:none;z-index:1;">
+            </div>
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" data-bind="attr: { src: src, alt: alt }, event:{ error: error }, click: callback ,css: (vertical == true ? '' : 'col-xs-6 col-sm-6 col-md-6 col-lg-6')" style="padding:0px 5px;"/>
+        </div>
+        <div class="caption contentCaption" data-bind="html:contentCaption, style:{ display: contentCaption == '' ? 'none' : '' }, css: (vertical == true ? '' : 'col-xs-6 col-sm-6 col-md-6 col-lg-6')" style="padding:10px 5px;">
+    </div>
+    <!-- /ko -->
+</div>

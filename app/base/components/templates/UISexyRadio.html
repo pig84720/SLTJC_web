@@ -1,0 +1,24 @@
+<label class="columnTitle"
+       data-bind="style: { width: viewModel.labelWidth, display: viewModel.label() == '' || viewModel.isVisible() == false ? 'none' : '' }">
+    <span data-bind="text: viewModel.label"></span>：
+</label>
+<div class="columnContentContainer" data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none' }">
+    <div class="input-group sexyRadio">
+        <div class="btn-group"
+             data-bind="hasFocus: viewModel.hasFocus,css:viewModel.groupName()+'RadioBtn'">
+            <!--ko foreach: viewModel.itemList -->
+            <a class="btn btn-primary btn-sm"
+               data-bind="html: itemName,
+                                  attr: { 'data-toggle': $parent.viewModel.groupName , 'data-title': itemValue},
+                                  css: $parent.viewModel()==itemValue ? 'active':'notActive'"></a>
+            <!--/ko-->
+        </div>
+        <input type="hidden"
+               data-bind="value:viewModel, attr: { name: viewModel.groupName}">
+    </div>
+    <div class="columnContentUnit bubble" style="float: right;"
+         data-bind="style:{ display: viewModel.isModified != null && viewModel.isModified() && viewModel.error() ? '' : 'none', left: viewModel.labelWidth }"
+         onclick="$(this).css('display','none');">
+        <span class="validationMessage" data-bind="validationMessage: viewModel"></span>
+    </div>
+</div>

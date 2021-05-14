@@ -1,0 +1,88 @@
+<label class="columnTitle" data-bind="style: { width: from.labelWidth, display: from.label() == '' || from.isVisible()==false || to.isVisible()==false ? 'none' : '' }">
+    <span data-bind="text:from.label"></span>：
+</label>
+<div class="columnContentContainer" data-bind="style: { display: from.isVisible() == false || to.isVisible()==false ? 'none' : '' }">
+    <div class="columnContentUnit">
+        <!-- ko if: from.placeholder == null -->
+        <input type="text"
+               data-bind="value: from,
+                  enable: from.isEnable,
+                  hasFocus: from.hasFocus,
+                  event:{
+                     keypress: monthKeypress,
+                     focus: fromMonthFocus,
+                     blur: fromMonthBlur,
+                     click: from.event.click,
+                     change: from.event.change
+                  },
+                  style: { width: from.width },
+                  attr: { maxlength: from.maxlength, placeholder:from.placeholder },
+                  css: from.cls "
+               style="display: inline-block;"
+                />
+        <!-- /ko -->
+        <!-- ko if: from.placeholder != null -->
+        <input type="text"
+               data-bind="value: from,
+                  enable: from.isEnable,
+                  hasFocus: from.hasFocus,
+                  event:{
+                     keypress: monthKeypress,
+                     focus: fromMonthFocus,
+                     blur: fromMonthBlur,
+                     click: from.event.click,
+                     change: from.event.change
+                  },
+                  style: { width: from.width },
+                  attr: { maxlength: from.maxlength, placeholder:from.placeholder },
+                  css: (from.placeholder() != '' ? 'form-control ' : '' ) + from.cls() "
+               style="display: inline-block;"
+        />
+        <!-- /ko -->
+        <span data-bind="text: from.unitLabel"></span>
+        ~
+        <!-- ko if: to.placeholder == null -->
+        <input type="text"
+               data-bind="value: to,
+                  enable: to.isEnable,
+                  hasFocus: to.hasFocus,
+                  event:{
+                     keypress: monthKeypress,
+                     focus: toMonthFocus,
+                     blur: toMonthBlur,
+                     click: to.event.click,
+                     change: to.event.change
+                  },
+                  style: { width: to.width },
+                  attr: { maxlength: to.maxlength, placeholder:to.placeholder },
+                  css: to.cls "
+               style="display: inline-block;"
+                />
+        <!-- /ko -->
+        <!-- ko if: to.placeholder != null -->
+        <input type="text"
+               data-bind="value: to,
+                  enable: to.isEnable,
+                  hasFocus: to.hasFocus,
+                  event:{
+                     keypress: monthKeypress,
+                     focus: toMonthFocus,
+                     blur: toMonthBlur,
+                     click: to.event.click,
+                     change: to.event.change
+                  },
+                  style: { width: to.width },
+                  attr: { maxlength: to.maxlength, placeholder:to.placeholder },
+                  css: ( to.placeholder() != '' ? 'form-control ' : '' ) + to.cls "
+               style="display: inline-block;"
+        />
+        <!-- /ko -->
+        <span data-bind="html: to.unitLabel"></span>
+    </div>
+    <div class="columnContentUnit bubble" style="float: right;"
+         data-bind="style:{ display: (from.isModified != null && from.isModified() && from.error()) || (to.isModified != null && to.isModified() && to.error()) ? '' : 'none', left: from.labelWidth }"
+         onclick="$(this).css('display','none');">
+        <div class="validationMessage" data-bind="validationMessage: from"></div>
+        <div class="validationMessage" data-bind="validationMessage: to"></div>
+    </div>
+</div>

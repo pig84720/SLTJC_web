@@ -1,0 +1,19 @@
+.k-grid-header .k-header {
+    color: rgba(0, 0, 0, 0.65) !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.k-grid {
+    font-family: Verdana, Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, 黑體-繁, "Heiti TC", 微軟正黑體, "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
+}
+.k-grid-header th {
+    font-weight: 900 !important;
+}
+.k-grid-header .k-link:hover, .k-grid-header .k-sorted {
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+.modal-title {
+    /* font-weight: 900; */
+    font-size: 16px;
+    font-family: 微軟正黑體;
+}

@@ -1,0 +1,25 @@
+<label class="columnTitle" data-bind="style: { width: viewModel.labelWidth, display: viewModel.label() == '' || viewModel.isVisible() == false ? 'none' : '' }">
+    <span data-bind="text: viewModel.label"></span>：
+</label>
+<div class="columnContentContainer"  data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none' }">
+    <div class="columnContentUnit" data-bind="foreach: viewModel.itemList">
+        <div data-bind="style:{ display: !$parent.viewModel.valign() ? 'inline-block' : '' }">
+            <input type="checkbox"
+                   data-bind="checked: $parent.viewModel,
+                  value: itemValue,
+                  enable: $parent.viewModel.isEnable,
+                  hasFocus: $parent.viewModel.hasFocus,
+                  click: $parent.viewModel.event.click"
+                   style="float: left;" />
+            <div class="columnTitle" style="text-align: left;float: left;margin-left: 3px;"
+                   data-bind="style: { width: $parent.viewModel.itemListWidth }">
+                <label data-bind="text: itemName"></label>
+            </div>
+        </div>
+    </div>
+    <div class="columnContentUnit bubble" style="float: right;"
+         data-bind="style:{ display: viewModel.isModified != null && viewModel.isModified() && viewModel.error() ? '' : 'none', left: viewModel.labelWidth }"
+         onclick="$(this).css('display','none');">
+        <span class="validationMessage" data-bind="validationMessage: viewModel"></span>
+    </div>
+</div>

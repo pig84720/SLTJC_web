@@ -1,0 +1,11 @@
+<div class="columnContentContainer" data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none' }">
+    <button type="button" class="btn" data-bind="
+            click: viewModel.event.click,
+            enable: viewModel.isEnable,
+            hasFocus: viewModel.hasFocus,
+            text: viewModel.label,
+            css: viewModel.ui,
+            style: { width: viewModel.width }"
+            >
+    </button>
+</div>

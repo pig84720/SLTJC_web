@@ -1,0 +1,1 @@
+{"version":3,"file":"UILinkSet.js","sources":["UILinkSet.js"],"names":[],"mappings":"AAGA,OAAA,wCAAA,WAAA,WAEA,OACA,KAAA","sourcesContent":["/**\n * Created by jerryhuang on 15/7/29.\n */\ndefine('base/components/viewmodels/UILinkSet',['require'],function (require) {\n\n    return {\n        init: function (id, vm) {\n        }\n    };\n});\n"]}

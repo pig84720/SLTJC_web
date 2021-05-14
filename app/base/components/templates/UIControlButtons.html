@@ -1,0 +1,45 @@
+<div class="panel" data-bind="css: viewModel.panelClass"
+     style="padding: 0px;margin-left: 5px;margin-right: 5px;">
+    <div class="btn-group" role="group" aria-label="..." data-bind="foreach: viewModel.buttons">
+        <!-- ko if: itemList().length > 0  -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"
+                    data-bind="click: click,
+                      enable: isEnable,
+                      css: buttonClass,
+                      style:{ display: isVisible() ? '' : 'none' },
+                      attr: { id: id }">
+                <span class="glyphicon" aria-hidden="true" data-bind="css:iconClass"></span>
+                <span data-bind="html:label"></span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <!-- ko foreach: itemList -->
+                <li data-bind="style:{ display: isVisible ? '' : 'none' }, css: buttonClass">
+                    <a href="#"
+                       data-bind="click: click,
+                      enable: isEnable,
+                      attr: { id: id }">
+                        <span class="glyphicon" aria-hidden="true" data-bind="css:iconClass"></span>
+                        <span data-bind="html:label"></span>
+                    </a>
+                </li>
+                <!-- /ko -->
+            </ul>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: itemList().length == 0 -->
+        <button type="button" class="btn"
+                data-bind="click: click,
+                  enable: isEnable,
+                  css: buttonClass,
+                  style:{ display: isVisible() ? '' : 'none' },
+                  attr: { id: id }"
+        >
+            <span class="glyphicon" aria-hidden="true" data-bind="css:iconClass"></span>
+            <span data-bind="html:label"></span>
+        </button>
+        <!-- /ko -->
+    </div>
+</div>

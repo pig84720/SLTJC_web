@@ -1,0 +1,18 @@
+<div class="modal fade " tabindex="-1" role="dialog"
+     data-bind="attr : { id : viewModel.id() + 'Popup', 'aria-labelledby' : viewModel.id() + 'Label' }">
+    <div class="modal-dialog " role="document" data-bind="css: viewModel.modalSize">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title" data-bind="text: viewModel.label , attr : { id : viewModel.id() + 'Label'}"
+                    style="color: black;"></h5>
+            </div>
+            <div class="modal-body">
+                <div data-bind="html:viewModel.content"></div>
+            </div>
+            <div class="modal-footer" style="display: none;">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<!-- ko if: kType=='open' -->
+<a data-bind="text:kTitle, attr:{ href:kUrl, target:kTarget }, click: urlClick "></a>
+<!-- /ko -->
+<!-- ko if: kType!='open' -->
+<span data-bind="text:kTitle, click:urlOpenInline" style="cursor:pointer;"></span>
+<!-- /ko -->

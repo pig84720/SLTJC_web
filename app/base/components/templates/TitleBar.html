@@ -1,0 +1,12 @@
+<div class='panel panel-primary panel-sm' style="margin: 5px;">
+    <div class='panel-heading' >
+        <span data-bind="text: viewModel.programId"></span>
+        <span data-bind="text: viewModel.programName"></span>
+    </div>
+    <div class='panel-body'>
+        <div style="float: left;" data-bind="style:{ display: viewModel.userName()!='' ? '' : 'none' }">使用者名稱：<span data-bind="text: viewModel.userName" class="titleBarContent"></span>&nbsp;&nbsp;</div>
+        <div style="float: left;" data-bind="style:{ display: viewModel.userCompany()!='' ? '' : 'none' }">使用者公司：<span data-bind="text: viewModel.userCompany" class="titleBarContent"></span>&nbsp;&nbsp;</div>
+        <div style="float: left;" data-bind="style:{ display: viewModel.userDepartment()!='' ? '' : 'none' }">使用者部門：<span data-bind="text: viewModel.userDepartment" class="titleBarContent"></span>&nbsp;&nbsp;</div>
+        <div style="float: left;" data-bind="style:{ display: viewModel.loginTime()!='' ? '' : 'none' }">登入時間：<span data-bind="text: viewModel.loginTime" class="titleBarContent"></span>&nbsp;&nbsp;</div>
+    </div>
+</div>

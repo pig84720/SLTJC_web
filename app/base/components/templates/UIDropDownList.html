@@ -1,0 +1,31 @@
+<label class="columnTitle" data-bind="style: { width: viewModel.labelWidth, display: viewModel.label() == '' || viewModel.isVisible() == false ? 'none' : '' }">
+    <span data-bind="text:viewModel.label"></span>：
+</label>
+<div class="columnContentContainer" data-bind="style: { display: viewModel.isVisible() == true ? '' : 'none' }">
+    <div class="columnContentUnit">
+        <select type="text"
+                data-bind="value: viewModel,
+                   options: viewModel.options,
+                   optionsText: viewModel.optionsText,
+                   optionsValue: viewModel.optionsValue,
+                   optionsCaption: viewModel.optionsCaption() == true ? '' : viewModel.optionsCaption(),
+                   enable: viewModel.isEnable,
+                   hasFocus: viewModel.hasFocus,
+                   event:{
+                        focus: viewModel.event.focus,
+                        click: viewModel.event.click,
+                        blur: viewModel.event.blur,
+                        change: viewModel.event.change
+                   },
+                   style: { width: viewModel.width },
+                  css: viewModel.cls "
+                >
+        </select>
+        <span data-bind="text: viewModel.unitLabel"></span>
+    </div>
+    <div class="columnContentUnit bubble" style="float: right;"
+         data-bind="style:{ display: viewModel.isModified != null && viewModel.isModified() && viewModel.error() ? '' : 'none', left: viewModel.labelWidth }"
+         onclick="$(this).css('display','none');">
+        <span class="validationMessage" data-bind="validationMessage: viewModel"></span>
+    </div>
+</div>

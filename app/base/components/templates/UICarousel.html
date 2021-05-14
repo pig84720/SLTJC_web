@@ -1,0 +1,29 @@
+<div data-bind="attr:{id:viewModel.id}" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators" data-bind="foreach: viewModel.kaSlideItems">
+        <li data-bind="attr:{ 'data-target': '#' + $parent.viewModel.id(), 'data-slide-to':$index }, css: $index()=='0' ? 'active' : '' "></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" data-bind="foreach: viewModel.kaSlideItems">
+        <div class="item" data-bind="css: $index()=='0' ? 'active' : '' ">
+            <a data-bind="attr:{href:href, target:target}">
+                <img data-bind="attr:{ src : src, alt : alt }" style="width: 100%;"/>
+            </a>
+            <div class="carousel-caption">
+                <h3 data-bind="text:title"></h3>
+                <p data-bind="text:description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" role="button" data-slide="prev" data-bind="attr: {href: '#' + viewModel.id()}">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" role="button" data-slide="next" data-bind="attr: {href: '#' + viewModel.id()}">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

@@ -1,0 +1,17 @@
+<ul data-bind="foreach: viewModel.kaUrlItems, style: { width: viewModel.width }, css:viewModel.cls "
+    class="linkset">
+    <li data-bind='css: $parent.viewModel.align()=="vertical" ? "linksetValign" : "linksetHalign"'>
+        <div data-bind='component: {name:"ui-link-item-base",
+                                    params: { kNo: itemNo,
+                                              kTitle: title,
+                                              kUrl: url,
+                                              kTarget: target,
+                                              kContent: content,
+                                              kType: type,
+                                              kSize: $parent.viewModel.modalSize,
+                                              kHeight: $parent.viewModel.modalHeight,
+                                              click: $parent.viewModel.click
+                                            }
+                                    }'></div>
+    </li>
+</ul>
