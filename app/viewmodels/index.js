@@ -1,7 +1,6 @@
 define(function (require) {
     'use strict';
     var modelToViewModel = require('ModelToViewModel');
-    var jqxgridEdit = require('jqxgrid.edit');
 
     var model = {
         id: '',
