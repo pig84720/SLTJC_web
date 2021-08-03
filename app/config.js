@@ -376,9 +376,7 @@ define(function (require) {
 //    require 必要的Module
   require('bootstrap');
   require('Application');
-  require('jQuery.XDomainRequest');
   require('kendo.all.min');
-  require('jquery.ui.widget');
 
   var common = require('Common');
   // if (!$('#bootstrapCss')[0]) {
