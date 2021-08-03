@@ -10,19 +10,22 @@ define(function (require) {
                 "col_02": "唱詩祈禱會",
                 "col_03": "撒母耳記上十七章",
                 "col_04": "陳俊安",
-                youtubeUrl: "https://www.youtube.com/watch?v=ulPx0Gcmxcg"
+                youtubeUrl: "https://www.youtube.com/watch?v=CQ1kk8WTg7g",
+                youtubeEmbedUrl: "https://www.youtube.com/embed/CQ1kk8WTg7g"
             }, {
                 "col_01": "2020/11/28",
                 "col_02": "晚間聚會(三)",
                 "col_03": "甘心奉獻",
                 "col_04": "陳俊安",
-                youtubeUrl: "https://www.youtube.com/watch?v=ulPx0Gcmxcg"
+                youtubeUrl: "https://www.youtube.com/watch?v=HTCwZFTyJg4",
+                youtubeEmbedUrl: "https://www.youtube.com/embed/HTCwZFTyJg4"
             }, {
                 "col_01": "2020/11/29",
                 "col_02": "晚間聚會(五)",
                 "col_03": "向標竿直跑",
                 "col_04": "陳俊安",
-                youtubeUrl: "https://www.youtube.com/watch?v=ulPx0Gcmxcg"
+                youtubeUrl: "https://www.youtube.com/watch?v=h4nEsnRbg6E",
+                youtubeEmbedUrl: "https://www.youtube.com/embed/h4nEsnRbg6E"
             }];
             $("#k-grid-etag").kendoGrid({
                 dataSource: {
@@ -128,7 +131,7 @@ define(function (require) {
                       "class": "table-cell",
                       style: "line-height: 40px; padding-left: 45px"
                     },
-                    template: "<div style='width: 30px; height: 30px; background-image: url(../SLTJC_web/image/338113.png); background-size: cover; cursor: pointer' onclick='$(`.modal-vedio-player`).modal(`show`);'></div>"
+                    template: "<div style='width: 30px; height: 30px; background-image: url(../SLTJC_web/image/338113.png); background-size: cover; cursor: pointer' onclick='$(`.iframe`).attr(`src`,`#: youtubeEmbedUrl #`); $(`.modal-vedio-player`).modal(`show`);'></div>"
                 }]
             });
             $('.modal-vedio-player').modal('show');
