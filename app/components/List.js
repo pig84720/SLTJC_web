@@ -9,6 +9,11 @@ define(function () {
                 config: {
                     template: {fromUrl: 'TitleBarHLC'},
                     viewModel: {fromParams: 'TitleBarHLC'}
+                },
+                id: 'monthPicker',
+                config: {
+                    template: {fromUrl: 'MonthPicker'},
+                    viewModel: {fromParams: 'MonthPicker'}
                 }
             }
         ]

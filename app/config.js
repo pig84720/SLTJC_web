@@ -128,6 +128,8 @@ require.config({
     //新增元件
     "kendo.all.min": "resources/scripts/kendo.all.min",
     "linqjs": 'resources/scripts/linq.min',
+    "firebase": 'resources/scripts/firebase',
+    "kendo.culture.zh-CN.min": 'resources/scripts/kendo.culture.zh-CN.min'
 
   },
   shim: {
@@ -368,6 +370,9 @@ require.config({
     'kendo.all.min': {
       deps: ['jQuery']
     },
+    'kendo.culture.zh-CN.min': {
+      deps: ['kendo.all.min']
+    }
   },
   waitSeconds: 0
 });
@@ -377,6 +382,8 @@ define(function (require) {
   require('bootstrap');
   require('Application');
   require('kendo.all.min');
+  require('firebase');
+  require('kendo.culture.zh-CN.min');
 
   var common = require('Common');
   // if (!$('#bootstrapCss')[0]) {

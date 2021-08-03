@@ -169,6 +169,33 @@ define(function (require) {
                 }
             }
         },
+        datepicker: {
+            value: '',
+            isEnable: true,
+            hasFocus: false,
+            width: '',
+            maxlength: '',
+            placeholder: '',
+            label: '',
+            id: '',
+            required: '',
+            validationMessage: '',
+            validatorV2: {},
+            cls: '',
+            event: {
+                keypress: function () {
+                    return true;
+                },
+                focus: function () {
+                },
+                blur: function () {
+                },
+                click: function () {
+                },
+                change: function () {
+                }
+            }
+        },
         time: {
             value: '',
             label: '',

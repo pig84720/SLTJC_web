@@ -1,0 +1,16 @@
+<input type="text" 
+       data-bind="value: viewModel,
+       enable: viewModel.isEnable,
+       hasFocus: viewModel.hasFocus,
+       event:{
+          keypress: calendarKeypress,
+          focus: calendarFocus,
+          blur: calendarBlur,
+          click: viewModel.event.click,
+          change: viewModel.event.change
+       },
+       style: { width: viewModel.width },
+       attr: { maxlength: viewModel.maxlength,
+               id: viewModel.id, 
+        },
+       css: viewModel.cls "/>
