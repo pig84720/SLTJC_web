@@ -34,11 +34,11 @@
         <footer style="display: flex; justify-content: center; padding-top: 20px;">
             <p style="font-family: 微軟正黑體; color:#808080;">©2021 SLTJC All Rights Reserved.</p>
         </footer>
-        <div class="modal fade modal-vedio-player" tabindex="-1" role="dialog" style="height: 100%; display: none; justify-content: center; align-items: center;">
+        <div class="modal fade modal-vedio-player" tabindex="-1" role="dialog" style="height: 100%; display: none; justify-content: center; align-items: center;" data-bind="with: videoSection">
             <div class="modal-content modal-lg" style="height: 80%;">
                 <div class="modal-header" style="display: flex; justify-content: space-between;">
                   <h5 class="modal-title">影片播放</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bind="click: videoClose">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>

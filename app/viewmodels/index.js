@@ -304,6 +304,11 @@ define(function (require) {
                     grid.refresh();
                 });
             }
+        },
+        videoSection: {
+            videoClose: function() {
+                $(".iframe").attr("src","");
+            }
         }
     };
 
