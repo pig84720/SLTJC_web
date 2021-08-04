@@ -155,7 +155,11 @@ define(function (require) {
                 maxlength: '',
                 id: '',
                 cls: '',
-                event: {}
+                event: {
+                    blur: function() {
+                        console.log(viewModel.searchSection.kMothSelect());
+                    }
+                }
             }
         }
     };
