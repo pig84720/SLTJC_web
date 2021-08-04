@@ -227,16 +227,16 @@ define(function (require) {
         init: function (programId, initVar, callback) {
             var currentMonth = moment().format('YYYYMM');
             db.ref(currentMonth).orderByChild("date").on('value',function(snapshot) {
+                currentMonth = currentMonth.split("");
+                currentMonth.splice(4, 0, "/");
+                currentMonth = currentMonth.join("");
+                viewModel.searchSection.kMothSelect(currentMonth);
                 var data = snapshot.val();
                 if(!data) {
                     Swal.fire('當前月份尚無資料');
                     noData([{date: "查無資料"}]);
                     return;
                 };
-                currentMonth = currentMonth.split("");
-                currentMonth.splice(4, 0, "/");
-                currentMonth = currentMonth.join("");
-                viewModel.searchSection.kMothSelect(currentMonth);
                 var dataAry = [];
                 Object.entries(data).forEach(([key, value]) => {
                     var date = value.date.split("");
