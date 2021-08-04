@@ -17,6 +17,10 @@ define(function (require) {
                     setGridDate([]);
                     return;
                 };
+                currentMonth = currentMonth.split("");
+                currentMonth.splice(4, 0, "/");
+                currentMonth = currentMonth.join("");
+                viewModel.searchSection.kMothSelect(currentMonth);
                 var dataAry = [];
                 Object.entries(data).forEach(([key, value]) => {
                     var date = value.date.split("");
@@ -120,7 +124,7 @@ define(function (require) {
                           "class": "table-cell",
                           style: "line-height: 40px; display: flex; justify-content: center; padding-top: 12px"
                         },
-                        template: "<div style='width: 30px; height: 30px; background-image: url(../image/2875384.png); background-size: cover; cursor: pointer' onclick='window.open(`#: youtubeUrl #`)'></div>"
+                        template: "<div style='width: 30px; height: 30px; background-image: url(../SLTJC_web/image/2875384.png); background-size: cover; cursor: pointer' onclick='window.open(`#: youtubeUrl #`)'></div>"
                     },
                     {
                         field: "col_06",
@@ -134,7 +138,7 @@ define(function (require) {
                           "class": "table-cell",
                           style: "line-height: 40px; padding-left: 45px"
                         },
-                        template: "<div style='width: 30px; height: 30px; background-image: url(../image/338113.png); background-size: cover; cursor: pointer' onclick='$(`.iframe`).attr(`src`,`#: youtubeEmbedUrl #`); $(`.modal-vedio-player`).css(`display`,`flex`); $(`.modal-vedio-player`).modal(`show`);'></div>"
+                        template: "<div style='width: 30px; height: 30px; background-image: url(../SLTJC_web/image/338113.png); background-size: cover; cursor: pointer' onclick='$(`.iframe`).attr(`src`,`#: youtubeEmbedUrl #`); $(`.modal-vedio-player`).css(`display`,`flex`); $(`.modal-vedio-player`).modal(`show`);'></div>"
                     }]
                 });
             };
@@ -149,7 +153,6 @@ define(function (require) {
                 hasFocus: false,
                 width: '',
                 maxlength: '',
-                label: '年月',
                 id: '',
                 cls: '',
                 event: {}
