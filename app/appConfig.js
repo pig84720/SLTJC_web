@@ -38,8 +38,8 @@ SS.service.baseUrl = "https://ap.searching-service.com/SSService/";
 //     var baseUrlArray = location.href.split(location.hostname + (location.port != '' ? ':' + location.port : '') + '/');
 //     SS.app.baseUrl = '/' + (baseUrlArray.length > 1 ? (baseUrlArray[1].indexOf('/') > -1 ? baseUrlArray[1].split('/')[0] + '/' : baseUrlArray[1]) : '');
 // }
-SS.app.baseUrl = '/SLTJC_web/'
-// SS.app.baseUrl = '/'
+// SS.app.baseUrl = '/SLTJC_web/'
+SS.app.baseUrl = '/'
 // SS.ssapi.url = "https://ap.searching-service.com/SSAPI45/";
 // SS.signalR.url = "http://ec2-52-68-179-147.ap-northeast-1.compute.amazonaws.com/WebWatch/";
 // SS.portal.serverInfo = [

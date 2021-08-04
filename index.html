@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>真耶穌教會雙連教會 聚會錄影查詢</title>
+    <title>真耶穌教會雙連教會</title>
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/kendo.common.min.css" rel="stylesheet">
@@ -13,18 +13,27 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
     <body>
+        <header style="display: flex; justify-content: center; padding-top: 20px;">
+            <h1>真耶穌教會雙連教會 聚會錄影查詢</h1>
+        </header>
         <main class="container">
             <div data-bind="with: searchSection">
-                <div class="row" style="display: flex; justify-content: flex-end; padding: 20px 15px;">
+                <div class="row" style="display: flex; justify-content: flex-end; padding: 15px 15px 20px 15px;">
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
                         <!-- 檢核失敗 $(".k-floating-label-container").addClass('k-state-invalid') -->
                         <!-- ko component: {name:"monthPicker", params: {viewModel: kMothSelect}} -->
                         <!-- /ko -->
                     </div>
+                    <div class="search-icon-container">
+                        <img src="../SLTJC_web/image/482631.png" alt="查詢" class="search-icon" data-bind="click: search">
+                    </div>
                 </div>
                 <div id="k-grid"></div>
             </div>
         </main>
+        <footer style="display: flex; justify-content: center; padding-top: 20px;">
+            <p style="font-family: 微軟正黑體; color:#808080;">©2021 SLTJC All Rights Reserved.</p>
+        </footer>
         <div class="modal fade modal-vedio-player" tabindex="-1" role="dialog" style="height: 100%; display: none; justify-content: center; align-items: center;">
             <div class="modal-content modal-lg" style="height: 80%;">
                 <div class="modal-header" style="display: flex; justify-content: space-between;">
@@ -42,6 +51,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <!-- <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <script src="app/appConfig.js"></script>
