@@ -2,6 +2,10 @@ define(function (require) {
     'use strict';
     var modelToViewModel = require('ModelToViewModel');
     var setGridDate = function(dataSource) {
+        var grid = $("#k-grid").data("kendoGrid");
+        if(grid) {
+            grid.destroy();
+        };
         $("#k-grid").kendoGrid({
             dataSource: {
                 data: dataSource,
@@ -17,7 +21,7 @@ define(function (require) {
                 pageSize: 10
             },
             pageable: true,
-            height: 500,
+            height: 600,
             resizable: true,
             persistSelection: true,
             pageable: {
@@ -111,6 +115,10 @@ define(function (require) {
         });
     };
     var noData = function(dataSource) {
+        var grid = $("#k-grid").data("kendoGrid");
+        if(grid) {
+            grid.destroy();
+        };
         $("#k-grid").kendoGrid({
             dataSource: {
                 data: dataSource,
@@ -126,7 +134,7 @@ define(function (require) {
                 pageSize: 10
             },
             pageable: true,
-            height: 500,
+            height: 600,
             resizable: true,
             persistSelection: true,
             pageable: {
@@ -300,8 +308,6 @@ define(function (require) {
                             setGridDate(dataAry);
                         });
                     };
-                    var grid = $("#k-grid").data("kendoGrid");
-                    grid.refresh();
                 });
             }
         },
