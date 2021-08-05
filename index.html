@@ -13,13 +13,13 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
     <body style="display: none; background-color: #FFFAF0;">
-        <header style="display: flex; justify-content: center; padding-top: 20px;">
+        <header style="display: flex; justify-content: center; padding: 20px 10px 0 10px;">
             <h1>真耶穌教會雙連教會 聚會錄影查詢</h1>
         </header>
         <main class="container">
             <div data-bind="with: searchSection">
                 <div class="row" style="display: flex; justify-content: flex-end; padding: 10px 15px 20px 15px;">
-                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                    <div class="col-xs-8 col-sm-3 col-md-3 col-lg-2">
                         <!-- 檢核失敗 $(".k-floating-label-container").addClass('k-state-invalid') -->
                         <!-- ko component: {name:"monthPicker", params: {viewModel: kMothSelect}} -->
                         <!-- /ko -->
@@ -35,7 +35,7 @@
             <p style="font-family: 微軟正黑體; color:#808080;">©2021 SLTJC All Rights Reserved.</p>
         </footer>
         <div class="modal fade modal-vedio-player" tabindex="-1" role="dialog" style="height: 100%; display: none; justify-content: center; align-items: center;" data-bind="with: videoSection">
-            <div class="modal-content modal-lg" style="height: 80%;">
+            <div class="modal-content modal-lg" style="height: 80%; width: 80%;">
                 <div class="modal-header" style="display: flex; justify-content: space-between;">
                   <h5 class="modal-title">影片播放</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bind="click: videoClose">
@@ -43,7 +43,7 @@
                   </button>
                 </div>
                 <div class="modal-body" style="height: 90%; width: 100%; display: flex; justify-content: center;">
-                    <iframe class="iframe" width="780" height="440" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="iframe" width="80%" height="90%" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

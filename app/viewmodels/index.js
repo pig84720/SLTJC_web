@@ -12,9 +12,10 @@ define(function (require) {
                 schema: {
                     model: {
                         fields: {
-                            col_01: { type: "string" },
-                            col_02: { type: "string" },
-                            col_03: { type: "string" }
+                            date: { type: "string" },
+                            type: { type: "string" },
+                            topic: { type: "string" },
+                            name: { type: "string" }
                         }
                     }
                 },
@@ -45,7 +46,7 @@ define(function (require) {
                 },
                 attributes: {
                   "class": "table-cell",
-                  style: "line-height: 40px; font-size: 15px"
+                  style: "line-height: 40px; font-size: 15px;"
                 }
             }, {
                 field: "type",
@@ -62,14 +63,14 @@ define(function (require) {
             }, {
                 field: "topic",
                 title: "講道主題",
-                width: "auto",
+                width: 341,
                 headerAttributes: {
                     "class": "table-header-cell",
                     style: "line-height: 50px"
                 },
                 attributes: {
                   "class": "table-cell",
-                  style: "line-height: 40px; font-size: 15px"
+                  style: "line-height: 40px; font-size: 15px;"
                 }
             }, {
                 field: "name",
@@ -81,7 +82,7 @@ define(function (require) {
                 },
                 attributes: {
                   "class": "table-cell",
-                  style: "line-height: 40px; font-size: 15px"
+                  style: "line-height: 40px; font-size: 15px;"
                 }
             },
             {
@@ -94,7 +95,7 @@ define(function (require) {
                 },
                 attributes: {
                   "class": "table-cell",
-                  style: "line-height: 40px; display: flex; justify-content: center; padding-top: 12px"
+                  style: "line-height: 40px; padding-left: 45px"
                 },
                 template: "<div style='width: 30px; height: 30px; background-image: url(../SLTJC_web/image/2875384.png); background-size: cover; cursor: pointer' onclick='window.open(`#: youtubeUrl #`)'></div>"
             },
@@ -125,9 +126,10 @@ define(function (require) {
                 schema: {
                     model: {
                         fields: {
-                            col_01: { type: "string" },
-                            col_02: { type: "string" },
-                            col_03: { type: "string" }
+                            date: { type: "string" },
+                            type: { type: "string" },
+                            topic: { type: "string" },
+                            name: { type: "string" }
                         }
                     }
                 },
@@ -175,7 +177,7 @@ define(function (require) {
             }, {
                 field: "topic",
                 title: "講道主題",
-                width: "auto",
+                width: 341,
                 headerAttributes: {
                     "class": "table-header-cell",
                     style: "line-height: 50px"
@@ -207,7 +209,7 @@ define(function (require) {
                 },
                 attributes: {
                   "class": "table-cell",
-                  style: "line-height: 40px; display: flex; justify-content: center; padding-top: 12px"
+                  style: "line-height: 40px; padding-left: 45px"
                 }
             },
             {

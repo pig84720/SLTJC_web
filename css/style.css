@@ -29,3 +29,8 @@
     width: auto;
     cursor: pointer;
 }
+@media (min-width: 768px) {
+    .table-cell {
+        height: 40px;
+    }
+}
