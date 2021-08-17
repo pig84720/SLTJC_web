@@ -2,7 +2,7 @@
  * Created by jerryhuang on 15/7/29.
  */
 define(function (require) {
-    var grid = require('Grid');
+    // var grid = require('Grid');
     var controlAttributes = require('ControlAttributes');
     var koGenerateViewModel = require('KoGenerateViewModel');
     var koExcludeAttributeList = koGenerateViewModel.koExcludeAttributeList;   //不轉換成ko物件的屬性
@@ -349,54 +349,54 @@ define(function (require) {
                 }
             }
         },
-        setGridData: function (gridSetting, data) {
-            var base = gridSetting;
-            grid.initGridWithArray({
-                localdata: data,
-                targetGrid: $('#' + base.id),
-                width: base.width,
-                height: base.height,
-                selectionmode: base.selectionmode,
-                autoheight: base.autoheight,
-                editable: base.editable,
-                pageable: base.pageable,
-                localization: base.localization,
-                theme: base.theme,
-                showstatusbar: base.showstatusbar,
-                showaggregates: base.showaggregates,
-                statusbarheight: base.statusbarheight,
-                sortable: base.sortable,
-                datafield: grid.getDataFieldsFromColumns(base.columns, base.data),
-                columns: grid.getColumns(base.columns, base)
-            });
-        },
-        checkGridValidation: function (gridSetting) {
-            var validationObjects = {},
-                $grid = $('#' + gridSetting.id),
-                validationResult = true;
-            $grid.jqxGrid('hidevalidationpopups');
-            if ($.isArray(gridSetting.columns)) {
-                $.map(gridSetting.columns, function (item, index) {
-                    if (item.validation) {
-                        validationObjects[item.dataField] = item.validation;
-                    }
-                });
-            }
+        // setGridData: function (gridSetting, data) {
+        //     var base = gridSetting;
+        //     grid.initGridWithArray({
+        //         localdata: data,
+        //         targetGrid: $('#' + base.id),
+        //         width: base.width,
+        //         height: base.height,
+        //         selectionmode: base.selectionmode,
+        //         autoheight: base.autoheight,
+        //         editable: base.editable,
+        //         pageable: base.pageable,
+        //         localization: base.localization,
+        //         theme: base.theme,
+        //         showstatusbar: base.showstatusbar,
+        //         showaggregates: base.showaggregates,
+        //         statusbarheight: base.statusbarheight,
+        //         sortable: base.sortable,
+        //         datafield: grid.getDataFieldsFromColumns(base.columns, base.data),
+        //         columns: grid.getColumns(base.columns, base)
+        //     });
+        // },
+        // checkGridValidation: function (gridSetting) {
+        //     var validationObjects = {},
+        //         $grid = $('#' + gridSetting.id),
+        //         validationResult = true;
+        //     $grid.jqxGrid('hidevalidationpopups');
+        //     if ($.isArray(gridSetting.columns)) {
+        //         $.map(gridSetting.columns, function (item, index) {
+        //             if (item.validation) {
+        //                 validationObjects[item.dataField] = item.validation;
+        //             }
+        //         });
+        //     }
 
-            for (var i = 0; i < $grid.jqxGrid('getrows').length; i++) {
-                for (var key in validationObjects) {
-                    var gridCell = $grid.jqxGrid('getcell', i, key);
-                    var validation = validationObjects[key](gridCell, gridCell.value);
-                    if (validation != true) {
-                        if (validation.result == false) {
-                            $grid.jqxGrid('showvalidationpopup', i, key, validation.message);
-                            validationResult = false;
-                        }
-                    }
-                }
-            }
-            return validationResult;
-        },
+        //     for (var i = 0; i < $grid.jqxGrid('getrows').length; i++) {
+        //         for (var key in validationObjects) {
+        //             var gridCell = $grid.jqxGrid('getcell', i, key);
+        //             var validation = validationObjects[key](gridCell, gridCell.value);
+        //             if (validation != true) {
+        //                 if (validation.result == false) {
+        //                     $grid.jqxGrid('showvalidationpopup', i, key, validation.message);
+        //                     validationResult = false;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     return validationResult;
+        // },
         hideGridValidation: function (gridSetting) {
             $('#' + gridSetting.id).jqxGrid('hidevalidationpopups');
         },
@@ -430,32 +430,32 @@ define(function (require) {
                 }
             }
         },
-        setJqxTreeData: function (base) {
-            var source =
-            {
-                datatype: "json",
-                datafields: grid.getDataFieldsFromColumns([], base.data()),
-                id: base.itemId(),
-                localdata: base.data()
-            };
+        // setJqxTreeData: function (base) {
+        //     var source =
+        //     {
+        //         datatype: "json",
+        //         datafields: grid.getDataFieldsFromColumns([], base.data()),
+        //         id: base.itemId(),
+        //         localdata: base.data()
+        //     };
 
-            // create data adapter.
-            var dataAdapter = new $.jqx.dataAdapter(source);
-            // perform Data Binding.
-            dataAdapter.dataBind();
-            // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
-            // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
-            // specifies the mapping between the 'text' and 'label' fields.
-            var records = dataAdapter.getRecordsHierarchy(
-                base.itemId(),
-                base.parentId(),
-                'items', base.itemMapping()
-            );
-            var $JqxTree = $('#' + base.id());
+        //     // create data adapter.
+        //     var dataAdapter = new $.jqx.dataAdapter(source);
+        //     // perform Data Binding.
+        //     dataAdapter.dataBind();
+        //     // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
+        //     // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
+        //     // specifies the mapping between the 'text' and 'label' fields.
+        //     var records = dataAdapter.getRecordsHierarchy(
+        //         base.itemId(),
+        //         base.parentId(),
+        //         'items', base.itemMapping()
+        //     );
+        //     var $JqxTree = $('#' + base.id());
 
-            $JqxTree.jqxTree({
-                source: records
-            });
-        }
+        //     $JqxTree.jqxTree({
+        //         source: records
+        //     });
+        // }
     };
 });
