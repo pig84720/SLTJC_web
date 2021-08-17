@@ -382,7 +382,6 @@ define(function (require) {
   require('bootstrap');
   require('Application');
   require('kendo.all.min');
-  require('firebase');
   require('kendo.culture.zh-CN.min');
 
   var common = require('Common');
